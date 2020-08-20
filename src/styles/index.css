@@ -1,0 +1,100 @@
+
+#contentContainer {
+    height: 90vw;
+    width: auto;
+    border: 5px black solid;
+    overflow: hidden;
+}
+
+#wrapper {
+    height: 90vh;
+    width: auto;
+    transform: translate3d(0, 0, 0);
+    transition: transform .5s ease-in-out;
+}
+
+main > section {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+    z-index: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0s ease .6s,-webkit-transform .6s ease .6s;
+    transition: opacity 0s ease .6s,-webkit-transform .6s ease .6s;
+    transition: transform .6s ease .6s,opacity 0s ease .6s;
+    transition: transform .6s ease .6s,opacity 0s ease .6s,-webkit-transform .6s ease .6s;
+}
+
+#home {
+    background-color: #ADFF2F;
+    background-image: url("//www.kirupa.com/images/blueSquare.png");
+    background-repeat: no-repeat;
+
+}
+#about {
+    background-color: #FF7F50;
+    background-image: url("//www.kirupa.com/images/yellowSquare.png");
+    background-repeat: no-repeat;
+}
+#work {
+    background-color: #1E90FF;
+    background-image: url("//www.kirupa.com/images/pinkSquare.png");
+    background-repeat: no-repeat;
+  
+}
+#contact {
+    background-color: #DC143C;
+    background-image: url("//www.kirupa.com/images/graySquare.png");
+    background-repeat: no-repeat;
+
+}
+
+#navLinks {
+    text-align: center;
+    width: 550px;
+}
+    #navLinks ul {
+        margin: 0px;
+        padding: 0px;
+        display: inline-block;
+        margin-top: 6px;
+    }
+        #navLinks ul li {
+            float: left;
+            text-align: center;
+            margin: 10px;
+            list-style: none;
+            cursor: pointer;
+            background-color: #CCCCCC;
+            padding: 5px;
+            border-radius: 50%;
+            border: black 5px solid;
+        }
+            #navLinks ul li:hover {
+                background-color: #FFFF00;
+            }
+            #navLinks ul li.active {
+                background-color: #333333;
+                color: #FFFFFF;
+                outline-width: 7px;
+            }
+                #navLinks ul li.active:hover {
+                    background-color: #484848;
+                    color: #FFFFFF;
+                }
+.activeSection {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    z-index: 1;
+    opacity: 1;
+    -webkit-transition: -webkit-transform .6s ease;
+    transition: -webkit-transform .6s ease;
+    transition: transform .6s ease;
+    transition: transform .6s ease,-webkit-transform .6s ease;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/index.css" type="text/css">
+    <title>Content</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div id="contentContainer">
+        <div id="navLinks">
+            <ul>
+                <li id="link-home" class="itemLinks" href="#home"></li>
+                <li id="link-about" class="itemLinks" href="#about"></li>
+                <li id="link-work" class="itemLinks" href="#work"></li>
+                <li id="link-contact" class="itemLinks" href="#contact"></li>
+            </ul>
+        </div>
+
+        <div id="wrapper">
+
+            <main>
+                <section id="home" class="content">
+                    TEST HOME
+                </section>
+
+                <section id="about" class="content">
+                    ABOUT
+                </section>
+
+                <section id="work" class="content">
+                    TEST CONTENT
+                </section>
+
+                <section id="contact" class="content">
+                    CONTACT
+                </section>
+            </main>
+        </div>
+    </div>
+
+
+    <script>
+        // just querying the DOM...like a boss!
+        var links = document.querySelectorAll(".itemLinks");
+        var wrapper = document.querySelector("#wrapper");
+
+        // the activeLink provides a pointer to the currently displayed item
+        var activeLink = 0;
+
+        // setup the event listeners
+        for (var i = 0; i < links.length; i++) {
+            var link = links[i];
+            link.addEventListener('click', setClickedItem, false);
+
+            // identify the item for the activeLink
+            link.itemID = i;
+        }
+
+        // set first item as active
+        links[activeLink].classList.add("active");
+        var sectionId = links[activeLink].getAttribute("href")
+        sectionId = sectionId.substring(1);
+        document.getElementById(sectionId).classList.remove("activeSection")
+
+
+
+        function setClickedItem(e) {
+            removeActiveLinks();
+
+            var clickedLink = e.target;
+            activeLink = clickedLink.itemID;
+
+            changePosition(clickedLink);
+        }
+
+        function removeActiveLinks() {
+            for (var i = 0; i < links.length; i++) {
+
+                links[i].classList.remove("active");
+                var sectionId = links[i].getAttribute("href")
+                sectionId = sectionId.substring(1);
+                document.getElementById(sectionId).classList.remove("activeSection")
+            }
+        }
+
+        // Handle changing the slider position as well as ensure
+        // the correct link is highlighted as being active
+        function changePosition(link) {
+
+            var sectionId = link.getAttribute("href")
+            sectionId = sectionId.substring(1);
+            console.log(sectionId)
+
+            const activeSection = document.getElementById(sectionId)
+            console.log(activeSection)
+
+            activeSection.classList.toggle("activeSection")
+            link.classList.add("active");
+        }
+
+
+    </script>
+</body>
+
+</html>

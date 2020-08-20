@@ -1,0 +1,183 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+
+.body__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #24252A;
+    padding: 0 10%;
+}
+
+.nav__links > li {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1em;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.nav__links > ul {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0 2em;
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li:hover {
+    color: #0088a9;
+    text-decoration: underline;
+}
+
+.nav__links > li.active {
+    color: #0088a9;
+}
+
+.nav__links > li.active:hover {
+    background-color: #0a71b6de;
+    color: #5cc9e4;
+    border-radius: 10px;
+}
+
+
+
+/* Desktop menu */
+@media all and (min-width: 768px) {
+    .nav__item {
+        display: block;
+        width: auto;
+    }
+    .toggle {
+        display: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .nav__item {
+        order: 1;
+    }
+    .button {
+        order: 2;
+    }
+    .nav__links li {
+        padding: 15px 10px;
+    }
+    .nav__links li.button {
+        padding-right: 0;
+    }
+  }
+
+/* ---------- Mobile Menu ------------- */
+
+/* Hide the link that should open and close the nav__links on small screens */
+.nav__links .menu-icon {
+    display: none;
+  }
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the nav__links (.menu-icon) */
+@media screen and (max-width: 600px) {
+    .nav__links li:not(:first-child) {display: none;}
+    .nav__links a.menu-icon {
+      color: #edf0f1;
+      float: right;
+      display: block;
+    }
+  }
+  
+  /* The "responsive" class is added to the nav__links with JavaScript when the user clicks on the menu-icon. This class makes the nav__links look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 600px) {
+
+    html {
+        margin-bottom: 100px;
+        overflow: hidden;
+    }
+    nav {
+        padding-top: 1em;
+    }
+    .nav__links.responsive {position: relative;}
+    .nav__links.responsive a.menu-icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    .nav__links.responsive li {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+
+
+/* --------------------- Content ------------------- */
+
+#contentContainer {
+    height: 89vh;
+    width: auto;
+    border: 5px black solid;
+    overflow: hidden;
+}
+
+#wrapper {
+    height: 100%;
+    width: auto;
+    transform: translate3d(0, 0, 0);
+}
+
+main > section {
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transform: translate3d(100%,0,0);
+    -webkit-transform: translate3d(100%,0,0);
+    z-index: 0;
+    opacity: 0;
+    -webkit-transition: opacity 0s ease .6s,-webkit-transform .6s ease .6s;
+    transition: opacity 0s ease .6s,-webkit-transform .6s ease .6s;
+    transition: transform .6s ease .6s,opacity 0s ease .6s;
+    transition: transform .6s ease .6s,opacity 0s ease .6s,-webkit-transform .6s ease .6s;
+}
+
+/* Sections */
+
+#home {
+    background-color: #ADFF2F;
+    background-image: url("//www.kirupa.com/images/blueSquare.png");
+    background-repeat: no-repeat;
+
+}
+#about {
+    background-color: #FF7F50;
+    background-image: url("//www.kirupa.com/images/yellowSquare.png");
+    background-repeat: no-repeat;
+}
+#work {
+    background-color: #1E90FF;
+    background-image: url("//www.kirupa.com/images/pinkSquare.png");
+    background-repeat: no-repeat;
+  
+}
+#contact {
+    background-color: #DC143C;
+    background-image: url("//www.kirupa.com/images/graySquare.png");
+    background-repeat: no-repeat;
+
+}
+
+.activeSection {
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
+    z-index: 1;
+    opacity: 1;
+    -webkit-transition: -webkit-transform .6s ease;
+    transition: -webkit-transform .6s ease;
+    transition: transform .6s ease;
+    transition: transform .6s ease,-webkit-transform .6s ease;
+}
