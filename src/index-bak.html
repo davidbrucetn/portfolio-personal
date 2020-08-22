@@ -15,46 +15,51 @@
 </head>
 
 <body>
-    <header class="body__header header">
-        <nav>
-            <ul id="nav__links" class="nav__links">
-                <li id="link-home" class="nav__item" href="#home">Home</li>
-                <li id="link-about" class="nav__item" href="#about">About</li>
-                <li id="link-work" class="nav__item" href="#work">Work</li>
-                <li id="link-contact" class="nav__item" href="#contact">Contact</li>
-                <a href="javascript:void(0);" class="menu-icon" onclick="mobileMenu()">
-                    <i class="fa fa-bars"></i></a>
-            </ul>
+    <div class="page__wrapper">
+        <header class="body__header header">
+            <nav class="nav__menu">
+                <ul id="nav__links" class="nav__links">
+                    <li id="link-home" class="nav__item" href="#home">Home</li>
+                    <li id="link-about" class="nav__item" href="#about">About</li>
+                    <li id="link-work" class="nav__item" href="#work">Work</li>
+                    <li id="link-contact" class="nav__item" href="#contact">Contact</li>
+                    <!-- <a href="javascript:void(0);" class="menu-icon" onclick="mobileMenu()">
+                    <i class="fa fa-bars"></i></a> -->
+                </ul>
 
-        </nav>
-    </header>
+            </nav>
+        </header>
 
-    <div id="contentContainer">
+        <div id="contentContainer">
 
 
-        <div id="wrapper">
+            <div id="wrapper">
 
-            <main>
-                <section id="home" class="content">
-                    HOME
-                </section>
+                <main>
+                    <section id="home" class="content">
+                        HOME
+                    </section>
 
-                <section id="about" class="content">
-                    ABOUT
-                </section>
+                    <section id="about" class="content">
+                        ABOUT
+                    </section>
 
-                <section id="work" class="content">
-                    WORK
-                </section>
+                    <section id="work" class="content">
+                        WORK
+                    </section>
 
-                <section id="contact" class="content">
-                    CONTACT
-                </section>
-            </main>
+                    <section id="contact" class="content">
+                        CONTACT
+                    </section>
+                </main>
+            </div>
         </div>
+
+        <footer class="body__footer">
+            Hey I'm a Footer
+        </footer>
+
     </div>
-
-
     <script>
         // just querying the DOM...like a boss!
         var links = document.querySelectorAll(".nav__item");
